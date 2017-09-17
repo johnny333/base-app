@@ -1,0 +1,36 @@
+docker:
+  postgres-db:
+    host: localhost
+    port: 5432
+    db-name: base
+    user: base
+    password: base
+
+spring:
+  devtools.restart.exclude: static/**,public/**,client/**
+  jpa:
+    database-platform: org.hibernate.dialect.PostgreSQL9Dialect
+    database: POSTGRESQL
+    openInView: false
+    generate-ddl: true
+    show_sql: false
+    hibernate:
+      ddl-auto: create-drop
+
+    properties:
+      hibernate.cache.use_second_level_cache: true
+      hibernate.cache.use_query_cache: false
+      hibernate.generate_statistics: false
+  data:
+    jpa.repositories.enabled: true
+  application.name: BaseApp
+
+  datasource:
+     url: jdbc:postgresql://${docker.postgres-db.host}:${docker.postgres-db.port}/${docker.postgres-db.db-name}
+     driver-class-name: org.postgresql.Driver
+     username: ${docker.postgres-db.user}
+     password: ${docker.postgres-db.password}
+
+server:
+  port: 8080
+

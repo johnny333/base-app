@@ -1,0 +1,25 @@
+version: '2'
+services:
+  #couchdb:
+   # container_name: couchdb
+   # image: klaemo/couchdb:latest
+   # ports:
+   #   - "5984:5984"
+   # environment:
+   #   - COUCHDB_USER=admin
+   #   - COUCHDB_PASSWORD=admin
+
+  # --------------
+  # webshop-db
+  # --------------
+  base:
+    image: postgres:9.4.1
+    container_name: base
+    hostname: base
+    ports:
+      - '5432:5432'
+    environment:
+      - POSTGRES_PASSWORD=base
+      - POSTGRES_USER=base
+      - POSTGRES_DB=base
+      - PGPORT=5432
