@@ -22,7 +22,7 @@ public interface IBaseDataService<DTO> {
 
     Collection<DTO> getElements();
 
-    Page<DTO> getPageOfElements(Pageable pageable);
+    Page<DTO> getElements(Pageable pageable);
 
     Class<?> getOBGenericType();
 

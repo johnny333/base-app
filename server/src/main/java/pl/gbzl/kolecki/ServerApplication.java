@@ -22,7 +22,7 @@ import java.net.UnknownHostException;
 @EntityScan(basePackages = {"pl.gbzl.kolecki.app.data"})
 @EnableJpaRepositories(
         basePackages = {"pl.gbzl.kolecki.app.repository"})
-@ComponentScan({"pl.gbzl.kolecki.app.data"})
+@ComponentScan({"pl.gbzl.kolecki.app"})
 @Import({CorsConfig.class})
 
 @SpringBootApplication(scanBasePackages = {"pl.gbzl.kolecki.app"})

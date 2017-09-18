@@ -67,7 +67,7 @@ public abstract class BaseDataService<OB, DTO> implements IBaseDataService<DTO> 
     }
 
     @Override
-    public Page<DTO> getPageOfElements(Pageable pageable) {
+    public Page<DTO> getElements(Pageable pageable) {
         return this.obToDtoConverter.convertPage(this.repository.findAll(pageable));
     }
 
